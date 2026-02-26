@@ -1,0 +1,11 @@
+@EndUserText: {
+  label: 'Service Definition for ZCITC_YSTUD_MAIN_TABLE301'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZCITC_YSTUD_MAIN_TABLE301'
+  }
+}
+define service ZCITUI_YSTUD_MAIN_TABLE_O4301 provider contracts odata_v4_ui {
+  expose ZCITC_YSTUD_MAIN_TABLE301;
+}

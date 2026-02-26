@@ -1,0 +1,56 @@
+managed implementation in class ZCITBP_R_YSTUD_MAIN_TABLE301 unique;
+strict ( 2 );
+with draft;
+extensible;
+define behavior for ZCITR_YSTUD_MAIN_TABLE301 alias ZcitrYstudMainTable301
+persistent table YSTUD_MAIN_TABLE
+extensible
+draft table ZCITYSTD_MN_D301
+etag master LocalLastChangedAt
+lock master total etag LastChangedAt
+authorization master( global )
+{
+  field ( mandatory : create )
+   StudentID;
+
+  field ( readonly )
+   CreatedBy,
+   CreatedAt,
+   LastChangedBy,
+   LastChangedAt,
+   LocalLastChangedAt;
+
+  field ( readonly : update )
+   StudentID;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for YSTUD_MAIN_TABLE corresponding extensible
+  {
+    StudentID = STUDENT_ID;
+    FirstName = FIRST_NAME;
+    LastName = LAST_NAME;
+    Gender = GENDER;
+    Dob = DOB;
+    Email = EMAIL;
+    Phone = PHONE;
+    Course = COURSE;
+    AdmissionDate = ADMISSION_DATE;
+    Status = STATUS;
+    CreatedBy = CREATED_BY;
+    CreatedAt = CREATED_AT;
+    LastChangedBy = LAST_CHANGED_BY;
+    LastChangedAt = LAST_CHANGED_AT;
+    LocalLastChangedAt = LOCAL_LAST_CHANGED_AT;
+  }
+
+}

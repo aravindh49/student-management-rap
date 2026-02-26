@@ -1,0 +1,6 @@
+@EndUserText.label: 'ZCITR_YSTUD_MAIN_TABLE301'
+@MappingRole: true
+define role ZCITR_YSTUD_MAIN_TABLE301 {
+  grant select on ZCITR_YSTUD_MAIN_TABLE301
+  where TRUE;
+}
